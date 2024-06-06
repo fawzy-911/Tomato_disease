@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2024 at 04:26 PM
+-- Generation Time: Jun 06, 2024 at 10:36 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `additional_tasks` (
 --
 
 INSERT INTO `additional_tasks` (`id`, `task`, `user_id`, `disease_id`) VALUES
-(2, 'Remove heavily infected leaves and debris', 15, 5);
+(2, 'Remove heavily infected leaves and debris', 15, 5),
+(3, 'Identify and prune out the infected leaves.', 16, 2);
 
 -- --------------------------------------------------------
 
@@ -50,7 +51,7 @@ INSERT INTO `additional_tasks` (`id`, `task`, `user_id`, `disease_id`) VALUES
 CREATE TABLE `journals` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `Plant_age` varchar(100) NOT NULL,
   `image` varchar(255) NOT NULL,
   `Disease_name` varchar(255) NOT NULL,
@@ -63,7 +64,9 @@ CREATE TABLE `journals` (
 --
 
 INSERT INTO `journals` (`id`, `title`, `date`, `Plant_age`, `image`, `Disease_name`, `user_id`, `treatment_id`) VALUES
-(8, 'Journal3', '0000-00-00', '4', 'tomato2.jpeg', 'Septoria_leaf_spot', 15, 5);
+(8, 'Journal3', '0000-00-00 00:00:00', '4', 'tomato2.jpeg', 'Septoria_leaf_spot', 15, 5),
+(10, 'journal4', '2024-05-29 20:47:58', '10', '', 'Bacterial Spot', 15, 1),
+(11, 'Journal5', '2024-06-16 21:00:00', '7', 'tomato.jpeg', 'Early_blight', 16, 2);
 
 -- --------------------------------------------------------
 
@@ -83,8 +86,8 @@ CREATE TABLE `tomato_disease` (
 
 INSERT INTO `tomato_disease` (`id`, `disease_name`, `treatment_id`) VALUES
 (1, 'Bacterial Spot', 1),
-(2, 'Early Blight', 2),
-(3, 'Late Blight ', 3),
+(2, 'Early_blight', 2),
+(3, ' Late_blight', 3),
 (4, 'Leaf Mold', 4),
 (5, 'Septoria_leaf_spot', 5),
 (6, 'Mosaic_Virus', 9),
@@ -173,7 +176,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `image`) VALUES
 (15, 'fawzy19', 'fawzy19@gmail.com', '23d23af5339b2d5fbfc9d964aeced00bf729584c', 'person.jpg'),
-(16, 'salma10', 'salma10@gmail.com', '23d23af5339b2d5fbfc9d964aeced00bf729584c', 'person.jpg');
+(16, 'salma19', 'salma19@gmail.com', 'd37f6349dfcd49a253b792c57b8d180996e32b22', 'person.jpg'),
+(17, 'sara11', 'sara@gmail.com', 'b216d3a047c056c83bdc990817e94805c5a8cd3a', 'person.jpg'),
+(18, 'sara', 'sara@gmail.com', 'b216d3a047c056c83bdc990817e94805c5a8cd3a', 'person.jpg'),
+(19, 'ahmed', 'ahmed@gmail.com', '97201ccb7ba72fa02146af66dd07fa9f5fa4d087', 'WhatsApp_Image_2024-05-21_at_12.18.21_AM_3.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -233,13 +239,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `additional_tasks`
 --
 ALTER TABLE `additional_tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `journals`
 --
 ALTER TABLE `journals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tomato_disease`
@@ -263,7 +269,7 @@ ALTER TABLE `treatment_tasks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

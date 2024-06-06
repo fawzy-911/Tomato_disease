@@ -1,0 +1,22 @@
+<!--Store this code in 'add_task.html' file inside the 'templates' folder-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Tasks </title>
+		<link rel="stylesheet" href="../static/css/main.css"> 
+	</head>
+	<body>
+		<div class="logincontent" align="center">
+			<div class="logintop">
+				<h1>Add Your Plant Task</h1>
+			</div></br></br></br></br>
+			<div class="loginbottom">
+			<form action="{{ url_for('add_task')}}" method="post" autocomplete="off">
+			<div class="msg">{{ msg }}</div>
+			<input type="text" name="task" placeholder="Enter Your Task" class="textbox"  required></br></br>
+			<input type="submit" class="btn" value="Add">
+			</form></br></br>
+			</div>
+		</div>
+	</body>
+</html>

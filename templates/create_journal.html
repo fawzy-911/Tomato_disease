@@ -1,0 +1,25 @@
+<!--Store this code in 'Create Journal.html' file inside the 'templates' folder-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Journals </title>
+		<link rel="stylesheet" href="../static/style.css"> 
+	</head>
+	<body>
+		<div class="registercontent" align="center">
+			<div class="registertop">
+				<h1>Create Your Plant Journal</h1>
+			</div></br></br>
+			<div class="registerbottom">
+			<form action="{{ url_for('create_journal')}}" method="post"  enctype="multipart/form-data">
+			<div class="msg">{{ msg }}</div>
+			<input type="text" name="title" placeholder="Enter Your Journal Title" class="textbox" id="username" required></br></br>
+			<input type="number" name="plant_age" placeholder="Enter Your Plant_age" class="textbox" required></br></br>
+			<input type="date" name="date" placeholder="Enter Your Date" class="textbox"  required></br></br>
+			<input type="file" name="file" placeholder="Enter Your Plant Image"  required></br></br>
+			<input type="submit" class="btn" value="Create">
+			</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -35,7 +35,7 @@ $(document).ready(function () {
         // Make prediction by calling api /predict
         $.ajax({
             type: 'POST',
-            url: '/api/predict',
+            url: '/predict',
             data: form_data,
             contentType: false,
             cache: false,
@@ -50,5 +50,13 @@ $(document).ready(function () {
             },
         });
     });
+    fetch('/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: 'some data' })
+    }).then(response => response.text())
+      .then(data => console.log(data));
 
 });
