@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2024 at 10:36 PM
+-- Generation Time: Jun 06, 2024 at 11:41 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -85,16 +85,16 @@ CREATE TABLE `tomato_disease` (
 --
 
 INSERT INTO `tomato_disease` (`id`, `disease_name`, `treatment_id`) VALUES
-(1, 'Bacterial Spot', 1),
+(1, 'Bacterial_spot', 1),
 (2, 'Early_blight', 2),
-(3, ' Late_blight', 3),
-(4, 'Leaf Mold', 4),
+(3, 'Late_blight', 3),
+(4, 'Leaf_Mold', 4),
 (5, 'Septoria_leaf_spot', 5),
-(6, 'Mosaic_Virus', 9),
-(7, 'Yellow_Leaf_Curl_Virus', 8),
+(6, 'Tomato_mosaic_virus', 9),
+(7, 'Tomato_Yellow_Leaf_Curl_Virus', 8),
 (8, 'Target_Spot', 7),
 (9, 'Spider_mites', 6),
-(10, 'Two-spotted-spider-mite', 6);
+(10, 'Spider_mites Two-spotted_spider_mite', 6);
 
 -- --------------------------------------------------------
 
