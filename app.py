@@ -95,9 +95,10 @@ def upload():
         # Store the result in the session
         session['result'] = result
 
-        
-        return f" {result}"  
-    return f" {result}" 
+        return jsonify({'result': result})
+        # return f" {result}"  
+    # return f" {result}"
+    return jsonify({'result': result}) 
 
 # Selecting data from Database and Storing in File Json  
 @app.route('/select_data', methods=['GET', 'POST'])
